@@ -1,0 +1,11 @@
+<div *ngFor="let criteria of criterias">
+  {{criteria.Label}}
+  <select [(ngModel)]="criteria.SelectedOption">
+    <option *ngFor="let country of criteria.Options">
+      {{country}}
+    </option>
+  </select>
+  <input [(ngModel)]="criteria.Value">
+</div>
+<button (click)="onClickSearch()">search</button>
+<p>{{selectedCriteria}}</p>
